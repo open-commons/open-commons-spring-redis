@@ -130,7 +130,18 @@ public abstract class AbstractRedisDao<K, V, F extends RedisConnectionFactory> i
      * @version _._._
      * @author Park_Jun_Hong_(fafanmama_at_naver_com)
      */
-    protected abstract RedisTemplate<K, V> createRedisTemplate(F factory);
+    public RedisTemplate<K, V> createRedisTemplate(F factory) {
+
+        RedisTemplate<K, V> tpl = new RedisTemplate<>();
+
+        tpl.setKeySerializer(keySerializer());
+        tpl.setValueSerializer(valueSerializer());
+        tpl.setStringSerializer(stringSerializer());
+        tpl.setConnectionFactory(factory);
+
+        return tpl;
+
+    }
 
     /**
      * <br>
@@ -213,7 +224,7 @@ public abstract class AbstractRedisDao<K, V, F extends RedisConnectionFactory> i
      * @author Park_Jun_Hong_(fafanmama_at_naver_com)
      */
     @SuppressWarnings("unchecked")
-    protected final K key(String pattern, int partition, BiFunction<K, K, K> comparator) {
+    protected K key(String pattern, int partition, BiFunction<K, K, K> comparator) {
 
         ScanOptions options = ScanOptions.scanOptions().match(pattern).count(100).build();
         RedisConnectionFactory con = getRedisConnectionFactory();
@@ -254,7 +265,7 @@ public abstract class AbstractRedisDao<K, V, F extends RedisConnectionFactory> i
      * @author Park_Jun_Hong_(fafanmama_at_naver_com)
      */
     @SuppressWarnings("unchecked")
-    protected final Collection<K> keys(String pattern, int partition) {
+    protected Collection<K> keys(String pattern, int partition) {
 
         Set<K> keys = new HashSet<>();
 
@@ -270,6 +281,24 @@ public abstract class AbstractRedisDao<K, V, F extends RedisConnectionFactory> i
 
         return keys;
     }
+
+    /**
+     * '키' 데이터  제공한다.
+     * <br>
+     * <pre>
+     * [개정이력]
+     *      날짜    	| 작성자	|	내용
+     * ------------------------------------------
+     * 2020. 12. 1.		박준홍			최초 작성
+     * </pre>
+     *
+     * @return
+     *
+     * @since 2020. 12. 1.
+     * @version _._._
+     * @author Park_Jun_Hong_(fafanmama_at_naver_com)
+     */
+    protected abstract RedisSerializer<?> keySerializer();
 
     /**
      * 대량의 데이터를 분할 조회하여 제공한다. <br>
@@ -416,4 +445,10 @@ public abstract class AbstractRedisDao<K, V, F extends RedisConnectionFactory> i
 
         return keyValues;
     }
+
+    protected RedisSerializer<String> stringSerializer() {
+        return RedisSerializer.string();
+    }
+
+    protected abstract RedisSerializer<?> valueSerializer();
 }
