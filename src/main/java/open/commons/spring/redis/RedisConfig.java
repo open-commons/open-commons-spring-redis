@@ -151,8 +151,9 @@ public class RedisConfig implements Serializable {
     }
 
     public static enum ConnectionTarget {
-        /** redis */
+        /** 'redis' */
         REDIS("redis"), //
+        /** 'sentinel' */
         SENTINEL("sentinel") //
         ;
 

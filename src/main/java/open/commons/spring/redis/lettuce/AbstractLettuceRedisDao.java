@@ -38,6 +38,7 @@ import open.commons.spring.redis.AbstractRedisDao;
 import open.commons.spring.redis.RedisConfig;
 import open.commons.spring.redis.RedisConfig.ConnectionTarget;
 import open.commons.spring.redis.RedisConnectionConfig;
+import open.commons.spring.redis.RedisTuningConfig;
 import open.commons.utils.ExceptionUtils;
 
 import io.lettuce.core.ReadFrom;
@@ -52,8 +53,12 @@ import io.lettuce.core.ReadFrom;
 @Validated
 public abstract class AbstractLettuceRedisDao<K, V> extends AbstractRedisDao<K, V, LettuceConnectionFactory> {
 
+    /** Redis 접속 정보 */
     @NotNull
     protected RedisConfig redisConfig;
+
+    /** Redis 명령어별 성능 향상을 위한 설정 */
+    protected RedisTuningConfig tuningConfig;
 
     private LettuceConnectionFactory connectionFactory;
 
@@ -158,9 +163,31 @@ public abstract class AbstractLettuceRedisDao<K, V> extends AbstractRedisDao<K, 
      * @param redisConfig
      *
      * @since 2020. 12. 1.
-     * @version _._._
+     * @version 0.1.0
      * @author Park_Jun_Hong_(fafanmama_at_naver_com)
+     * 
+     * @see #redisConfig
      */
     public abstract void setRedisConfig(RedisConfig redisConfig);
+
+    /**
+     * Redis 명령어별 성능 향상을 위한 설정을 적용한다. <br>
+     * 
+     * <pre>
+     * [개정이력]
+     *      날짜    	| 작성자	|	내용
+     * ------------------------------------------
+     * 2020. 12. 3.		박준홍			최초 작성
+     * </pre>
+     *
+     * @param tuningConfig
+     *
+     * @since 2020. 12. 3.
+     * @version 0.1.0
+     * @author Park_Jun_Hong_(fafanmama_at_naver_com)
+     * 
+     * @see #ConfigurationProperties
+     */
+    public abstract void setTuningConfig(RedisTuningConfig tuningConfig);
 
 }

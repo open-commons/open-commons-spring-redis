@@ -283,8 +283,8 @@ public abstract class AbstractRedisDao<K, V, F extends RedisConnectionFactory> i
     }
 
     /**
-     * '키' 데이터  제공한다.
-     * <br>
+     * '키' 데이터 제공한다. <br>
+     * 
      * <pre>
      * [개정이력]
      *      날짜    	| 작성자	|	내용
