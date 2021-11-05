@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Park Jun-Hong_(parkjunhong77/google/com)
+ * Copyright 2020 Park Jun-Hong_(parkjunhong77@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,7 @@
  *
  * Date  : 2020. 12. 1. 오후 4:38:45
  *
- * Author: Park_Jun_Hong_(fafanmama_at_naver_com)
+ * Author: Park_Jun_Hong_(parkjunhong77@gmail.com)
  * 
  */
 
@@ -62,7 +62,7 @@ import open.commons.collection.FIFOMap;
  * 
  * @since 2020. 12. 1.
  * @version 0.1.0
- * @author Park_Jun_Hong_(fafanmama_at_naver_com)
+ * @author Park_Jun_Hong_(parkjunhong77@gmail.com)
  */
 public abstract class AbstractRedisDao<K, V, F extends RedisConnectionFactory> implements InitializingBean, DisposableBean {
 
@@ -104,7 +104,7 @@ public abstract class AbstractRedisDao<K, V, F extends RedisConnectionFactory> i
      * @throws Exception
      *
      * @since 2020. 12. 1.
-     * @author Park_Jun_Hong_(fafanmama_at_naver_com)
+     * @author Park_Jun_Hong_(parkjunhong77@gmail.com)
      *
      * @see org.springframework.beans.factory.InitializingBean#afterPropertiesSet()
      */
@@ -128,7 +128,7 @@ public abstract class AbstractRedisDao<K, V, F extends RedisConnectionFactory> i
      *
      * @since 2020. 12. 1.
      * @version _._._
-     * @author Park_Jun_Hong_(fafanmama_at_naver_com)
+     * @author Park_Jun_Hong_(parkjunhong77@gmail.com)
      */
     public RedisTemplate<K, V> createRedisTemplate(F factory) {
 
@@ -156,7 +156,7 @@ public abstract class AbstractRedisDao<K, V, F extends RedisConnectionFactory> i
      * @throws Exception
      *
      * @since 2020. 12. 1.
-     * @author Park_Jun_Hong_(fafanmama_at_naver_com)
+     * @author Park_Jun_Hong_(parkjunhong77@gmail.com)
      *
      * @see org.springframework.beans.factory.DisposableBean#destroy()
      */
@@ -178,7 +178,7 @@ public abstract class AbstractRedisDao<K, V, F extends RedisConnectionFactory> i
      *
      * @since 2020. 12. 1.
      * 
-     * @author Park_Jun_Hong_(fafanmama_at_naver_com)
+     * @author Park_Jun_Hong_(parkjunhong77@gmail.com)
      */
     protected abstract int getDatabase();
 
@@ -197,7 +197,7 @@ public abstract class AbstractRedisDao<K, V, F extends RedisConnectionFactory> i
      *
      * @since 2020. 12. 1.
      * 
-     * @author Park_Jun_Hong_(fafanmama_at_naver_com)
+     * @author Park_Jun_Hong_(parkjunhong77@gmail.com)
      */
     protected abstract F getRedisConnectionFactory();
 
@@ -221,7 +221,7 @@ public abstract class AbstractRedisDao<K, V, F extends RedisConnectionFactory> i
      *
      * @since 2020. 12. 1.
      * 
-     * @author Park_Jun_Hong_(fafanmama_at_naver_com)
+     * @author Park_Jun_Hong_(parkjunhong77@gmail.com)
      */
     @SuppressWarnings("unchecked")
     protected K key(String pattern, int partition, BiFunction<K, K, K> comparator) {
@@ -262,7 +262,7 @@ public abstract class AbstractRedisDao<K, V, F extends RedisConnectionFactory> i
      * 
      * @since 2020. 4. 8.
      * 
-     * @author Park_Jun_Hong_(fafanmama_at_naver_com)
+     * @author Park_Jun_Hong_(parkjunhong77@gmail.com)
      */
     @SuppressWarnings("unchecked")
     protected Collection<K> keys(String pattern, int partition) {
@@ -296,7 +296,7 @@ public abstract class AbstractRedisDao<K, V, F extends RedisConnectionFactory> i
      *
      * @since 2020. 12. 1.
      * @version _._._
-     * @author Park_Jun_Hong_(fafanmama_at_naver_com)
+     * @author Park_Jun_Hong_(parkjunhong77@gmail.com)
      */
     protected abstract RedisSerializer<?> keySerializer();
 
@@ -325,7 +325,7 @@ public abstract class AbstractRedisDao<K, V, F extends RedisConnectionFactory> i
      *
      * @since 2020. 12. 1.
      * 
-     * @author Park_Jun_Hong_(fafanmama_at_naver_com)
+     * @author Park_Jun_Hong_(parkjunhong77@gmail.com)
      */
     protected List<V> lrange(ListOperations<K, V> op, K key, int workerCount, long partitionSize, Predicate<V> filterIn) {
 
@@ -392,7 +392,7 @@ public abstract class AbstractRedisDao<K, V, F extends RedisConnectionFactory> i
      *
      * @since 2020. 4. 8.
      * 
-     * @author Park_Jun_Hong_(fafanmama_at_naver_com)
+     * @author Park_Jun_Hong_(parkjunhong77@gmail.com)
      */
     protected Map<K, V> mgetWithKey(@NotNull ValueOperations<K, V> op, @NotNull Collection<K> keys, @Min(1) int partition) {
 

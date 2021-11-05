@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Park Jun-Hong_(parkjunhong77/google/com)
+ * Copyright 2020 Park Jun-Hong_(parkjunhong77@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,7 @@
  *
  * Date  : 2020. 12. 1. 오후 4:41:47
  *
- * Author: Park_Jun_Hong_(fafanmama_at_naver_com)
+ * Author: Park_Jun_Hong_(parkjunhong77@gmail.com)
  * 
  */
 
@@ -48,7 +48,7 @@ import io.lettuce.core.ReadFrom;
  * 
  * @since 2020. 12. 1.
  * @version 0.1.0
- * @author Park_Jun_Hong_(fafanmama_at_naver_com)
+ * @author Park_Jun_Hong_(parkjunhong77@gmail.com)
  */
 @Validated
 public abstract class AbstractLettuceRedisDao<K, V> extends AbstractRedisDao<K, V, LettuceConnectionFactory> {
@@ -82,7 +82,7 @@ public abstract class AbstractLettuceRedisDao<K, V> extends AbstractRedisDao<K, 
      * @throws Exception
      *
      * @since 2020. 12. 1.
-     * @author Park_Jun_Hong_(fafanmama_at_naver_com)
+     * @author Park_Jun_Hong_(parkjunhong77@gmail.com)
      *
      * @see open.commons.spring.redis.AbstractRedisDao#afterPropertiesSet()
      */
@@ -141,7 +141,7 @@ public abstract class AbstractLettuceRedisDao<K, V> extends AbstractRedisDao<K, 
      * @return
      *
      * @since 2020. 12. 1.
-     * @author Park_Jun_Hong_(fafanmama_at_naver_com)
+     * @author Park_Jun_Hong_(parkjunhong77@gmail.com)
      *
      * @see open.commons.spring.redis.AbstractRedisDao#getRedisConnectionFactory()
      */
@@ -164,7 +164,7 @@ public abstract class AbstractLettuceRedisDao<K, V> extends AbstractRedisDao<K, 
      *
      * @since 2020. 12. 1.
      * @version 0.1.0
-     * @author Park_Jun_Hong_(fafanmama_at_naver_com)
+     * @author Park_Jun_Hong_(parkjunhong77@gmail.com)
      * 
      * @see #redisConfig
      */
@@ -184,7 +184,7 @@ public abstract class AbstractLettuceRedisDao<K, V> extends AbstractRedisDao<K, 
      *
      * @since 2020. 12. 3.
      * @version 0.1.0
-     * @author Park_Jun_Hong_(fafanmama_at_naver_com)
+     * @author Park_Jun_Hong_(parkjunhong77@gmail.com)
      * 
      * @see #ConfigurationProperties
      */
