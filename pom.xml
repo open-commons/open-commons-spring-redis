@@ -23,7 +23,7 @@
 		<compile.target-version>1.8</compile.target-version>
 
 		<!-- >>> begin: dependencies -->
-		<slf4j-api.version>1.7.26</slf4j-api.version>
+		<slf4j-api.version>1.7.32</slf4j-api.version>
 		<org.springframework-version>5.1.13.RELEASE</org.springframework-version>
 		<commons-io.version>2.5</commons-io.version>
 
