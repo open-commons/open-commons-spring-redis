@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>open.commons</groupId>
 	<artifactId>open-commons-spring-redis</artifactId>
-	<version>0.1.0</version>
+	<version>0.2.0-SNAPSHOT</version>
 	<name>Open Commons Spring Redis Library</name>
 
 	<licenses>
@@ -27,7 +27,7 @@
 		<org.springframework-version>5.1.13.RELEASE</org.springframework-version>
 		<commons-io.version>2.5</commons-io.version>
 
-		<open-commons-core.version>1.8.0-SNAPSHOT</open-commons-core.version>
+		<open-commons-core.version>2.0.0-SNAPSHOT</open-commons-core.version>
 		<!-- <<< end: dependencies -->
 
 		<!-- >>> begin: plugin dependencies -->
