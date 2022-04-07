@@ -34,12 +34,12 @@ import org.springframework.data.redis.connection.lettuce.LettuceClientConfigurat
 import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory;
 import org.springframework.validation.annotation.Validated;
 
+import open.commons.core.utils.ExceptionUtils;
 import open.commons.spring.redis.AbstractRedisDao;
 import open.commons.spring.redis.RedisConfig;
 import open.commons.spring.redis.RedisConfig.ConnectionTarget;
 import open.commons.spring.redis.RedisConnectionConfig;
 import open.commons.spring.redis.RedisTuningConfig;
-import open.commons.utils.ExceptionUtils;
 
 import io.lettuce.core.ReadFrom;
 

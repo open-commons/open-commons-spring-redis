@@ -54,8 +54,8 @@ import org.springframework.data.redis.core.ScanOptions;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.data.redis.serializer.RedisSerializer;
 
-import open.commons.TwoValueObject;
-import open.commons.collection.FIFOMap;
+import open.commons.core.TwoValueObject;
+import open.commons.core.collection.FIFOMap;
 
 /**
  * Redis Dao 클래스.
