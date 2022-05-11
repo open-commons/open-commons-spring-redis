@@ -1,3 +1,8 @@
+[2022/05/11]
+- Dependencies
+  + springframework:5.3.19
+  + spring-data-redis: 2.6.4
+
 [2022/04/07]
 - Release: 0.2.0-SNAPSHOT
 - Tag: 0.1.0
