@@ -1,3 +1,7 @@
+[2024/10/31]
+- ETC
+  + Maven Repository 주소 변경 (http -> https)
+  
 [2022/05/11]
 - Dependencies
   + springframework:5.3.19
