@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>open.commons</groupId>
+		<groupId>io.github.open-commons</groupId>
 		<artifactId>open-commons-spring-web-dependencies</artifactId>
 		<version>0.8.0-SNAPSHOT</version>
 		<relativePath /> <!-- lookup parent from repository -->
@@ -42,8 +42,6 @@
 		<org.springframework-version>5.3.19</org.springframework-version>
 		<spring-data-redis.version>2.6.4</spring-data-redis.version>
 		<commons-io.version>2.5</commons-io.version>
-
-		<open-commons-core.version>2.0.0-SNAPSHOT</open-commons-core.version>
 		<!-- <<< end: dependencies -->
 
 		<!-- >>> begin: plugin dependencies -->
@@ -51,15 +49,13 @@
 		<!-- >>> end: plugin dependencies -->
 	</properties>
 
-
 	<distributionManagement>
 		<repository>
-			<id>releases</id>
-			<name>Release Repository</name>
-			<url>https://nexus3.ymtech.co.kr/repository/maven-releases/</url>
+			<id>maven-central</id>
+			<url>https://central.sonatype.com</url>
 		</repository>
 		<snapshotRepository>
-			<id>snapshots</id>
+			<id>ymtech-maven-repo</id>
 			<name>Snapshot Repository</name>
 			<url>https://nexus3.ymtech.co.kr/repository/maven-snapshots/</url>
 		</snapshotRepository>
@@ -110,7 +106,7 @@
 
 		<!-- >>> begin: open-commons -->
 		<dependency>
-			<groupId>open.commons</groupId>
+			<groupId>io.github.open-commons</groupId>
 			<artifactId>open-commons-core</artifactId>
 		</dependency>
 		<!-- <<< end: open-commons -->
@@ -215,6 +211,33 @@
 				</executions>
 			</plugin>
 			<!-- <<< end: javadoc -->
+			<!-- Maven Central Deployment plugin -->
+			<plugin>
+				<groupId>org.sonatype.central</groupId>
+				<artifactId>central-publishing-maven-plugin</artifactId>
+				<version>0.7.0</version>
+				<extensions>true</extensions>
+				<configuration>
+					<publishingServerId>maven-central</publishingServerId>
+					<!-- autoPublish>true</autoPublish>
+             		<waitUntil>published</waitUntil -->
+				</configuration>
+			</plugin>
+			<!-- GPG signature plugin -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>1.5</version>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 </project>
