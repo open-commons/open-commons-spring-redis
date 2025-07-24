@@ -89,12 +89,20 @@
 	</pluginRepositories>
 
 	<dependencies>
-		<!-- begin: Validation -->
-		<dependency>
-			<groupId>javax.validation</groupId>
-			<artifactId>validation-api</artifactId>
-		</dependency>
-		<!-- end : Validation -->
+    <!-- ************** -->
+    <!-- >>> begin: Validation -->
+    <!-- https://mvnrepository.com/artifact/jakarta.validation/jakarta.validation-api -->
+    <dependency>
+      <groupId>jakarta.validation</groupId>
+      <artifactId>jakarta.validation-api</artifactId>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/com.google.code.findbugs/jsr305 -->
+    <dependency>
+      <groupId>com.google.code.findbugs</groupId>
+      <artifactId>jsr305</artifactId>
+    </dependency>
+    <!-- <<< end: Validation -->
+    <!-- ************** -->
 
 		<!-- >>> begin: Apache Commons -->
 		<dependency>
